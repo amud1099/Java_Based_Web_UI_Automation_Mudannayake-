@@ -45,7 +45,7 @@ public class AccountLoginTest extends TestBase {
     public static void testUserCannotLoginUsingValidUsernameAndAnInvalidPassword() throws UnsupportedEncodingException {
         AccountLogin.loginToBundabergrumByInvalidPassword();
         SoftAssert softAssert=new SoftAssert();
-        softAssert.assertEquals(AccountLogin.isDisplayedPasswordValidation(),"Please enter 6 or more characters. Leading or trailing spaces will be ignored.","Expected validation does not displayed");
+        softAssert.assertEquals(AccountLogin.isDisplayedInvalidPasswordValidation(),"Invalid login or password.","Expected validation does not displayed");
         softAssert.assertAll();
     }
 
@@ -54,7 +54,6 @@ public class AccountLoginTest extends TestBase {
         AccountLogin.loginToBundabergrumByInvalidUsernameAndInvalidPassword();
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(AccountLogin.isDisplayedEmailValidation(),"Please enter a valid email address. For example johndoe@domain.com.","Expected validation does not displayed");
-        softAssert.assertEquals(AccountLogin.isDisplayedPasswordValidation(),"Please enter 6 or more characters. Leading or trailing spaces will be ignored.","Expected validation does not displayed");
         softAssert.assertAll();
     }
 
@@ -75,14 +74,6 @@ public class AccountLoginTest extends TestBase {
     }
 
     @Test(priority = 7, alwaysRun = true)
-    public static void testCaseSensitivityOfEmail() throws UnsupportedEncodingException {
-        AccountLogin.enterCaseSensitiveUserName();
-        SoftAssert softAssert=new SoftAssert();
-        softAssert.assertEquals(AccountLogin.isDisplayedEmailValidation(),"Please enter a valid email address. For example johndoe@domain.com.","Expected validation does not displayed");
-        softAssert.assertAll();
-    }
-
-    @Test(priority = 8, alwaysRun = true)
     public static void testForgotPasswordLink()  {
         AccountLogin.clickForgotPasswordLink();
         SoftAssert softAssert=new SoftAssert();

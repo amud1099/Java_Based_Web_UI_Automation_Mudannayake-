@@ -108,6 +108,11 @@ public class AccountLogin {
         return  accountLoginPage.isDisplayedPasswordValidation();
     }
 
+    public static String isDisplayedInvalidPasswordValidation() {
+        return  accountLoginPage.isDisplayedInvalidPasswordValidation();
+    }
+
+
     public static void enterEmailInForgotPassword()  {
         accountLoginPage.enterEmailInForgotPasswrd(Constants.EMAIL);}
 }

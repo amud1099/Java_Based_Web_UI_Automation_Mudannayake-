@@ -106,14 +106,6 @@ public class DashboardTest extends TestBase {
     }
 
     @Test(priority = 7, alwaysRun = true)
-    public static void testValidationWhenKeepsAllFieldsEmptyInPayPalDetails() {
-        Dashboard.clickContinueInPayPal();
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(Dashboard.isDisplayedRequiredPopUpForCreditCardNumber(),"Check your card number","expected validation does not displayed");
-        softAssert.assertAll();
-    }
-
-    @Test(priority = 8, alwaysRun = true)
     public static void testEnteringPayPalDetails() {
         Dashboard.enterCreditCardNumber();
         Dashboard.enterExpirevalue();
@@ -122,9 +114,8 @@ public class DashboardTest extends TestBase {
         Dashboard.clickNoThanks();
         Dashboard.clickPolicy();
         Dashboard.clickContinueInPayPal();
-        Dashboard.clickContinueAfterEnteringPayPalDetails();
         SoftAssert softAssert=new SoftAssert();
-        softAssert.assertEquals(Dashboard.isDisplayedValidationForInvalidCreditNumber(),"We're sorry. We couldn't link your card. Please link a different card.","Expected validation does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedValidationForInvalidCreditNumber(),"We can't verify your address","Expected validation does not displayed");
         softAssert.assertAll();
     }
 

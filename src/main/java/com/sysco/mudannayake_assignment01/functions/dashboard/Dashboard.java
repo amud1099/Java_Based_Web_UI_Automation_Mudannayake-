@@ -213,7 +213,7 @@ public class Dashboard {
     }
 
     public static void enterCreditCardNumber()  {
-        dashboardPage.enterCreditCardNumber("4455 5555 5566 666");
+        dashboardPage.enterCreditCardNumber("2222 2222 3333 3333");
     }
 
     public static void enterExpirevalue()  {

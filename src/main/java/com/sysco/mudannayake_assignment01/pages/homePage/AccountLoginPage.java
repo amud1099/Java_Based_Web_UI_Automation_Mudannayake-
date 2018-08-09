@@ -24,6 +24,7 @@ public class AccountLoginPage extends LoginPage {
     private static By txtEmailInForgotPassword=By.id("email_address");
     private static By btnSubmit=By.xpath("//*[@id=\"form-validate\"]/div/div/div/button");
     private static By txtEmailSendMessage=By.xpath("/html/body/div[3]/div[3]/div[2]/div/div/ul/li/ul/li/span");
+    private static By txtInvalidPasswordValidation=By.xpath("//div[3]//ul[@class='messages']/li/ul/li");
 
     public void clickMyAccountLink() {
         syscoLabUIOgm.click(lnkMyAccount);
@@ -98,6 +99,10 @@ public class AccountLoginPage extends LoginPage {
 
     public String isDisplayedPasswordValidation() {
         return syscoLabUIOgm.getText(txtPasswordValidation);
+    }
+
+    public String isDisplayedInvalidPasswordValidation() {
+        return syscoLabUIOgm.getText(txtInvalidPasswordValidation);
     }
 
 

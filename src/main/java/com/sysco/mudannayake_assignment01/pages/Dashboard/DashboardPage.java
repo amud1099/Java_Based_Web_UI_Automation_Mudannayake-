@@ -55,7 +55,7 @@ public class DashboardPage extends LoginPage {
     private static By chkPrivacyPolicy =By.xpath("//div[@class='ng-scope signupFields']//span[@class='ng-scope']/label");
     private static By txtPhoneNumber =By.id("telephone");
     private static By btnContinueAfterEnteringPayPalDetails =By.id("fullContinue");
-    private static By txtValidationForInvalidCreditNumber =By.xpath("//ul[@role='presentation']//span[@class='ng-binding']");
+    private static By txtValidationForInvalidCreditNumber =By.xpath("//div[@id='addressNormalization']//form[@name='addressNormalizationForm']//h2[@class='gamma ng-binding']");
     private static By btnContinueInPayPal =By.id("guestSubmit");
     private static By txtRequiredExpire =By.id("qxlwmfw");
     private static By txtRequiredCvv =By.id("tqlgj");
@@ -396,7 +396,6 @@ public class DashboardPage extends LoginPage {
         syscoLabUIOgm.sleep(2);
         syscoLabUIOgm.click(btnContinueInPayPal);
         syscoLabUIOgm.sleep(3);
-        syscoLabUIOgm.scrollUp();
     }
 
 
