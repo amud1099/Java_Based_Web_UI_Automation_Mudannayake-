@@ -17,7 +17,7 @@ public class DashboardTest extends TestBase {
 
     @BeforeClass
     public void init(ITestContext iTestContext)throws UnsupportedEncodingException {
-        iTestContext.setAttribute("feature", "Bundabergrum - AccountLogin");
+        iTestContext.setAttribute("feature", "Bundabergrum - Dashboard");
         Login.loadPage();
         BirthDayValidation.clickDayDropDown();
         BirthDayValidation.clickMonthDropDown();
