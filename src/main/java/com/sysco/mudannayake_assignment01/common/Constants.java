@@ -8,7 +8,7 @@ public class Constants {
     public static final boolean RUN_LOCALLY = Boolean.parseBoolean(System.getProperty("run.locally", "true"));
     public static final String APP_URL = System.getProperty("app.url", "https://www.bundabergrum.com.au/");
     public static final String APP_OS = System.getProperty("app.os", "WIN10");
-    public static final String APP_BROWSER = System.getProperty("app.browser", "chrome");
+    public static final String CHROME_DRIVER = System.getProperty("app.browser", "chrome");
 
 
     //--------------------------------AccountLoginConstants---------------------------------------------
