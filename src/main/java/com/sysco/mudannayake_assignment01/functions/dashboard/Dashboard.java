@@ -196,7 +196,6 @@ public class Dashboard {
     }
 
 
-
     public static void clickContinueInDeliveryOptions() {
         dashboardPage.clickContinueInDeliveryOptions();
     }

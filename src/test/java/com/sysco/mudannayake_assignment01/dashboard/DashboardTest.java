@@ -101,7 +101,7 @@ public class DashboardTest extends TestBase {
         Dashboard.selectAgreement();
         Dashboard.clickPurchase();
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(Dashboard.isDisplayedPayPalAccount(),"Got a PayPal account?","expected name does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedPayPalAccount(),"PayPal Guest Checkout","expected name does not displayed");
         softAssert.assertAll();
     }
 
@@ -109,8 +109,6 @@ public class DashboardTest extends TestBase {
     public static void testValidationWhenKeepsAllFieldsEmptyInPayPalDetails() {
         Dashboard.clickContinueInPayPal();
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(Dashboard.isDisplayedRequiredPopUpForExpire(),"Required","expected validation does not displayed");
-        softAssert.assertEquals(Dashboard.isDisplayedRequiredPopUpForCvv(),"Required","expected validation does not displayed");
         softAssert.assertEquals(Dashboard.isDisplayedRequiredPopUpForCreditCardNumber(),"Check your card number","expected validation does not displayed");
         softAssert.assertAll();
     }
@@ -120,6 +118,7 @@ public class DashboardTest extends TestBase {
         Dashboard.enterCreditCardNumber();
         Dashboard.enterExpirevalue();
         Dashboard.enterCVV();
+        Dashboard.enterPhone();
         Dashboard.clickNoThanks();
         Dashboard.clickPolicy();
         Dashboard.clickContinueInPayPal();

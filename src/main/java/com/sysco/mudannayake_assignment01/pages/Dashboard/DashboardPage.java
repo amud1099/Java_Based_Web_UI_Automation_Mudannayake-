@@ -26,7 +26,7 @@ public class DashboardPage extends LoginPage {
     private static By txtName =xpath("//h2/a[@href='https://www.bundabergrum.com.au/royal-liqueur-mixed-pack-4']");
     private static By txtPriceInPopUp =xpath("//ol[@id='mini-cart']/li[@class='item odd']//table//span[@class='price']");
     private static By txtNameInPopUp =xpath("//ol[@id='mini-cart']//p[@class='product-name']/a[@href='https://www.bundabergrum.com.au/royal-liqueur-mixed-pack-4']");
-    private static By btnProceedToCheckOut =xpath("//div[@class='payment-types']/ul[@class='checkout-types']//button[@title='Proceed to Checkout']//span[@class='mobile-hide']");
+    private static By btnProceedToCheckOut =xpath("//div[2]/div[3]/div[2]/div/div[1]/div[1]/div/ul/li[2]/button");
     private static By btnContinue =id("delivery-address-button");
     private static By txtEmptyEmailValidation =id("advice-required-entry-login-email-guest");
     private static By txtCheckOut =xpath("//h1[.='Checkout']");
@@ -45,23 +45,23 @@ public class DashboardPage extends LoginPage {
     private static By icnRemovePostCode =id("billing:postcodesuburbremove");
     private static By txtPostCode =id("billing:postcodesuburb");
     private static By txtDeliveryOptions =xpath("//h2[.='Delivery Options']");
-    private static By btnContinueInDeliveryOptions =id("shipping-method-button");
-    private static By rdBtnPayPal =xpath("//*[@id=\"checkout-payment-method-load\"]/div[2]");
+    private static By btnContinueInDeliveryOptions =xpath("//button[@id='shipping-method-button']");
+    private static By rdBtnPayPal =xpath("//dl[@id='checkout-payment-method-load']/div[2]/dt/label");
     private static By chkAgreement =id("agreement-1");
-    private static By btnPurchase =xpath("//span/span[.='Purchase My Order']");
-    private static By txtPayPal =xpath("//div[@id='loginSection']//b[@class='ng-binding']");
+    private static By btnPurchase =id("payment-method-button");
+    private static By txtPayPal =id("pageTitle");
     private static By txtCreditCard =id("cc");
     private static By txtExpireValue =id("expiry_value");
     private static By txtCVV =id("cvv");
     private static By rdBtnNoThanks =xpath("//fieldset/div[3]/label[.='No, thanks.']");
-    private static By chkPrivacyPolicy =xpath("//div[@class='ng-scope signupFields']//span[@class='ng-scope']");
+    private static By chkPrivacyPolicy =xpath("//div[@class='ng-scope signupFields']//span[@class='ng-scope']/label");
     private static By txtPhoneNumber =id("telephone");
     private static By btnContinueAfterEnteringPayPalDetails =id("fullContinue");
     private static By txtValidationForInvalidCreditNumber =xpath("//ul[@role='presentation']//span[@class='ng-binding']");
     private static By btnContinueInPayPal =id("guestSubmit");
     private static By txtRequiredExpire =id("qxlwmfw");
     private static By txtRequiredCvv =id("tqlgj");
-    private static By txtRequiredForCreditCardNumber =id("fyxdnqn");
+    private static By txtRequiredForCreditCardNumber =id("wklodsz");
     String value ="value";
 
     public void clickCartIcon() {
@@ -187,6 +187,7 @@ public class DashboardPage extends LoginPage {
     }
 
     public void clickProceedToCheckOut() {
+        syscoLabUIOgm.scrollUp();
         syscoLabUIOgm.sleep(1);
         syscoLabUIOgm.click(btnProceedToCheckOut);
         syscoLabUIOgm.sleep(2);
@@ -297,10 +298,14 @@ public class DashboardPage extends LoginPage {
     }
 
     public String isDisplayedPayPalAccount() {
+        syscoLabUIOgm.sleep(2);
+        syscoLabUIOgm.scrollUp();
+        syscoLabUIOgm.sleep(2);
         return (syscoLabUIOgm.getText(txtPayPal));
     }
 
     public String isDisplayedRequiredPopUpForExpire() {
+        syscoLabUIOgm.scrollUp();
         syscoLabUIOgm.click(txtExpireValue);
         return (syscoLabUIOgm.getText(txtRequiredExpire));
     }
@@ -311,6 +316,9 @@ public class DashboardPage extends LoginPage {
     }
 
     public String isDisplayedRequiredPopUpForCreditCardNumber() {
+        syscoLabUIOgm.scrollUp();
+        syscoLabUIOgm.click(txtContactNumber);
+        syscoLabUIOgm.click(txtContactNumber);
         return (syscoLabUIOgm.getText(txtRequiredForCreditCardNumber));
     }
 
@@ -319,13 +327,17 @@ public class DashboardPage extends LoginPage {
     }
 
     public void clickContinueInDeliveryOptions() {
+        syscoLabUIOgm.scrollUp();
+        syscoLabUIOgm.sleep(2);
         syscoLabUIOgm.mouseHover(btnContinueInDeliveryOptions);
         syscoLabUIOgm.click(btnContinueInDeliveryOptions);
-        syscoLabUIOgm.sleep(1);
+        syscoLabUIOgm.sleep(3);
     }
 
     public void selectPayPalOption() {
+        syscoLabUIOgm.sleep(2);
         syscoLabUIOgm.mouseHover(rdBtnPayPal);
+        syscoLabUIOgm.sleep(1);
         syscoLabUIOgm.click(rdBtnPayPal);
         syscoLabUIOgm.sleep(1);
     }
@@ -365,7 +377,7 @@ public class DashboardPage extends LoginPage {
     }
 
     public void clickContinueAfterEnteringPayPalDetails() {
-        syscoLabUIOgm.sleep(1);
+        syscoLabUIOgm.sleep(2);
         syscoLabUIOgm.click(btnContinueAfterEnteringPayPalDetails);
         syscoLabUIOgm.sleep(3);
     }
@@ -383,9 +395,10 @@ public class DashboardPage extends LoginPage {
 
     public void clickContinueInPayPal() {
         syscoLabUIOgm.scrollBottom();
-        syscoLabUIOgm.sleep(1);
-        syscoLabUIOgm.click(btnContinueInPayPal);
         syscoLabUIOgm.sleep(2);
+        syscoLabUIOgm.click(btnContinueInPayPal);
+        syscoLabUIOgm.sleep(3);
+        syscoLabUIOgm.scrollUp();
     }
 
 

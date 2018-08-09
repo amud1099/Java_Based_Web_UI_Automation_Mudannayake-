@@ -21,7 +21,7 @@ public class AccountLoginTest extends TestBase {
         Login.loadPage();
         BirthDayValidation.clickDayDropDown();
         BirthDayValidation.clickMonthDropDown();
-        BirthDayValidation.clickYearDropDownForGreaterThan18();
+        BirthDayValidation.clickYearDropDown();
         BirthDayValidation.clickEnter();
     }
 
