@@ -1,26 +1,41 @@
-package com.sysco.mudannayake_assignment01.utils;
+package com.syscolabs.cpas.qe.utils;
 
+
+
+import com.google.gson.JsonArray;
+import com.sysco.mudannayake_assignment01.common.Constants;
+import com.sysco.mudannayake_assignment01.functions.loadBundabergrumPage.Login;
 import com.syscolab.qe.core.reporting.SyscoLabListener;
 import com.syscolab.qe.core.reporting.SyscoLabQCenter;
 import com.syscolab.qe.core.reporting.SyscoLabReporting;
-import com.sysco.mudannayake_assignment01.common.Constants;
-import org.apache.log4j.Logger;
+import com.syscolab.qe.core.ui.SyscoLabUI;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
 @Listeners(SyscoLabListener.class)
-public class TestBase {
+public class TestBase extends SyscoLabListener {
     private SyscoLabListener testListeners;
     private SyscoLabQCenter syscoLabQCenter;
+    protected SyscoLabUI syscoLabUI;
 
-    @BeforeClass
+    static JsonArray elements;
+
+    static JsonArray skippedTests;
+    long testSuiteStarted = 0;
+    long testSuiteDuration = 0;
+    private int skipCount = 0;
+
+    @BeforeTest
     public void init() {
 
         testListeners = new SyscoLabListener();
         syscoLabQCenter = new SyscoLabQCenter();
+
+        DesiredCapabilities capabilities1 = null;
+
     }
 
     @BeforeTest
@@ -40,10 +55,17 @@ public class TestBase {
             syscoLabQCenter.setClassName(iTestContext.getClass().getName());
 
             if (Constants.UPDATE_DASHBOARD)
-                SyscoLabReporting.generateJsonFile(SyscoLabListener.getResults(), syscoLabQCenter);
+                SyscoLabReporting.generateJsonFile(testListeners.getResults(), syscoLabQCenter);
 
+            Login.quiteDriver();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+
+
+
 }
+
