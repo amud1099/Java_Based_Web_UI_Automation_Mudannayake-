@@ -5,8 +5,9 @@ public class Constants {
     private Constants(){}
 
     public static final String TEST_ENV = System.getProperty("test.env", "QE");
-    public static final String TEST_RELEASE = System.getProperty("test.release", "Bundabergrum");
+    public static final String TEST_RELEASE = System.getProperty("test.release", "CPAS_WEB");
     public static final String TEST_PROJECT = System.getProperty("test.project", "CPAS");
+
     public static final boolean UPDATE_DASHBOARD = Boolean.parseBoolean(System.getProperty("update.dashboard", "true"));
     public static final boolean RUN_LOCALLY = Boolean.parseBoolean(System.getProperty("run.locally", "true"));
     public static final String APP_URL = System.getProperty("app.url", "https://www.bundabergrum.com.au/");
