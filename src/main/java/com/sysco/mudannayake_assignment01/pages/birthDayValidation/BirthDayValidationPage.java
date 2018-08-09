@@ -6,18 +6,16 @@ import org.openqa.selenium.By;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-import static org.openqa.selenium.By.id;
-import static org.openqa.selenium.By.xpath;
 
 public class BirthDayValidationPage extends LoginPage {
 
-    private By ddDay = id("age_select_day");
-    private By ddMonth = id("age_select_month");
-    private By ddYear = id("age_select_year");
-    private By txtValidation = id("age_missing_message");
-    private By btnEnter = id("age_confirm_btn");
-    private By lnkMyAccount = xpath("//a[@title='My Account']");
-    private By txtValidationWhenKeepsAllFieldsEmpty = xpath("//div[@id='age_missing_message']/span[@class='langable']");
+    private By ddDay = By.id("age_select_day");
+    private By ddMonth = By.id("age_select_month");
+    private By ddYear = By.id("age_select_year");
+    private By txtValidation = By.id("age_missing_message");
+    private By btnEnter = By.id("age_confirm_btn");
+    private By lnkMyAccount = By.xpath("//a[@title='My Account']");
+    private By txtValidationWhenKeepsAllFieldsEmpty = By.xpath("//div[@id='age_missing_message']/span[@class='langable']");
 
     public void clickDayDropDown() {
         syscoLabUIOgm.click(ddDay);
