@@ -17,7 +17,7 @@ public class AccountLogin {
         accountLoginPage.clickMyAccountLink();
     }
 
-    public static Boolean isDisplayedLoginButton() {
+    public static boolean isDisplayedLoginButton() {
        return  accountLoginPage.isDisplayedLoginButton();
     }
 
