@@ -1,10 +1,9 @@
 package com.sysco.mudannayake_assignment01.utils;
 
+import com.sysco.mudannayake_assignment01.common.Constants;
 import com.syscolab.qe.core.reporting.SyscoLabListener;
 import com.syscolab.qe.core.reporting.SyscoLabQCenter;
 import com.syscolab.qe.core.reporting.SyscoLabReporting;
-import com.sysco.mudannayake_assignment01.common.Constants;
-import org.apache.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

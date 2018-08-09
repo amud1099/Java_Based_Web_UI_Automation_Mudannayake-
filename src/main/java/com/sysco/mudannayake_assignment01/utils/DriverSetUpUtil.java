@@ -1,6 +1,5 @@
 package com.sysco.mudannayake_assignment01.utils;
 
-import com.sysco.mudannayake_assignment01.common.Constants;
 import com.syscolab.qe.core.ui.SyscoLabCapabilityUtil;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.BrowserType;
@@ -19,15 +18,15 @@ public class DriverSetUpUtil {
     //Please add your required drivers here
     public static void setToRunLocally() {
         if (System.getProperty("os.name").contains("Windows")) {
-            System.setProperty(Constants.CHROME_DRIVER, "src/main/resources/chrome_driver/windows/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chrome_driver/windows/chromedriver.exe");
         } else {
-            System.setProperty(Constants.CHROME_DRIVER, "src/main/resources/chrome_driver/" + System.getProperty("os.arch") + "/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chrome_driver/" + System.getProperty("os.arch") + "/chromedriver");
         }
     }
 
 
     public static void setToRunLocally(String path) {
-        System.setProperty(Constants.CHROME_DRIVER, path + System.getProperty("os.arch") + "/chromedriver");
+        System.setProperty("webdriver.chrome.driver", path + System.getProperty("os.arch") + "/chromedriver");
     }
 
     public static Capabilities setToRunRemotely(String browser) {
