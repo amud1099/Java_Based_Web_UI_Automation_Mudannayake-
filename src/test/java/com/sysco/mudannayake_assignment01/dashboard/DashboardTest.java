@@ -102,7 +102,6 @@ public class DashboardTest extends TestBase {
         Dashboard.clickPurchase();
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(Dashboard.isDisplayedPayPalAccount(),"PayPal Guest Checkout","expected name does not displayed");
-
         softAssert.assertAll();
     }
 

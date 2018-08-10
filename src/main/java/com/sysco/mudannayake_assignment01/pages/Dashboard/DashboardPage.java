@@ -277,6 +277,8 @@ public class DashboardPage extends LoginPage {
     }
 
     public String isDisplayedPayPalAccount() {
+        syscoLabUIOgm.sleep(5);
+        syscoLabUIOgm.scrollUp();
         syscoLabUIOgm.sleep(2);
         return (syscoLabUIOgm.getText(txtPayPal));
     }
