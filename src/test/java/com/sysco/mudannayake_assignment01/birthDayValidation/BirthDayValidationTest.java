@@ -13,7 +13,7 @@ public class BirthDayValidationTest extends TestBase {
 
     @BeforeClass
     public void init(ITestContext iTestContext) {
-        iTestContext.setAttribute("feature", "Bundabergrum - BirthDayValidation");
+        iTestContext.setAttribute("feature", "Bundabergrum - Checkout");
         Login.loadPage();
     }
 

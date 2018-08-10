@@ -17,7 +17,7 @@ public class AccountLoginTest extends TestBase {
 
     @BeforeClass
     public void init(ITestContext iTestContext) {
-        iTestContext.setAttribute("feature", "Bundabergrum - AccountLogin");
+        iTestContext.setAttribute("feature", "Bundabergrum - Checkout");
         Login.loadPage();
         BirthDayValidation.clickDayDropDown();
         BirthDayValidation.clickMonthDropDown();
