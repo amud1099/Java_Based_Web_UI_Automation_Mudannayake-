@@ -20,10 +20,6 @@ public class Dashboard {
         dashboardPage.MoveToProductCategory();
     }
 
-    public static void clickBottleShop() {
-        dashboardPage.clickBottleShop();
-    }
-
     public static void clickRoyalLiqueur() {
         dashboardPage.clickRoyalLiqueur();
     }
@@ -56,21 +52,8 @@ public class Dashboard {
         dashboardPage.clearContactNumberName();
     }
 
-    public static void enterEmailInCheckOut()  {
-        dashboardPage.enterEmail(Constants.EMAIL);
-    }
-
-    public static void enterPasswordInCheckOut()  {
-        dashboardPage.enterPassword(Constants.PASSWORD);
-
-    }
-
     public static void clickCheckOut() {
         dashboardPage.clickCheckOut();
-    }
-
-    public static void clickAccountButton() {
-        dashboardPage.clickAccountButton();
     }
 
     public static void clickContinue() {
@@ -95,14 +78,6 @@ public class Dashboard {
 
     public static boolean isDisplayedPrice() {
       return dashboardPage.isDisplayedPrice();
-    }
-
-    public static String isDisplayedEmptyEmailValidation() {
-        return dashboardPage.isDisplayedEmptyEmailValidation();
-    }
-
-    public static String isDisplayedCheckOut() {
-        return  dashboardPage.isDisplayedCheckOut();
     }
 
     public static boolean isDisplayedName() {
@@ -178,23 +153,9 @@ public class Dashboard {
         return  dashboardPage.isDisplayedPayPalAccount();
     }
 
-    public static String isDisplayedRequiredPopUpForExpire() {
-        return  dashboardPage.isDisplayedRequiredPopUpForExpire();
-    }
-
-    public static String isDisplayedRequiredPopUpForCvv() {
-        return  dashboardPage.isDisplayedRequiredPopUpForCvv();
-    }
-
-    public static String isDisplayedRequiredPopUpForCreditCardNumber() {
-        return  dashboardPage.isDisplayedRequiredPopUpForCreditCardNumber();
-    }
-
-
     public static String isDisplayedValidationForInvalidCreditNumber() {
         return  dashboardPage.isDisplayedValidationForInvalidCreditNumber();
     }
-
 
     public static void clickContinueInDeliveryOptions() {
         dashboardPage.clickContinueInDeliveryOptions();
@@ -210,6 +171,7 @@ public class Dashboard {
 
     public static void clickPurchase() {
         dashboardPage.clickPurchase();
+
     }
 
     public static void enterCreditCardNumber()  {
@@ -237,9 +199,6 @@ public class Dashboard {
         dashboardPage.clickPolicy();
     }
 
-    public static void clickContinueAfterEnteringPayPalDetails() {
-        dashboardPage.clickContinueAfterEnteringPayPalDetails();
-    }
 
     public static void clickContinueInPayPal() {
         dashboardPage.clickContinueInPayPal();

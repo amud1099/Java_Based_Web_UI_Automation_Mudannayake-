@@ -8,7 +8,7 @@ import com.sysco.mudannayake_assignment01.data.LoginData;
  */
 public class ExcelUtil {
 
-
+private ExcelUtil(){}
     public static LoginData getLoginData(String key) {
         Object loginObject = ReadExcel.getDataFromExcelSheet(key, System.getProperty("user.dir") + "/src/main/resources/testData/TestData.xls", 0, LoginData.class);
         LoginData loginData = (LoginData) loginObject;

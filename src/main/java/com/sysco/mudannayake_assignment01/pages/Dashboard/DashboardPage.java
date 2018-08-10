@@ -26,10 +26,7 @@ public class DashboardPage extends LoginPage {
     private static By txtNameInPopUp =By.xpath("//ol[@id='mini-cart']//p[@class='product-name']/a[@href='https://www.bundabergrum.com.au/royal-liqueur-mixed-pack-4']");
     private static By btnProceedToCheckOut =By.xpath("//div[2]/div[3]/div[2]/div/div[1]/div[1]/div/ul/li[2]/button");
     private static By btnContinue =By.id("delivery-address-button");
-    private static By txtEmptyEmailValidation =By.id("advice-required-entry-login-email-guest");
-    private static By txtCheckOut =By.xpath("//h1[.='Checkout']");
     private static By txtEmail =By.id("login-email");
-    private static By btnAccount =By.xpath("//dl[@id='collateral-tabs']//span[@class='tab2Class']");
     private static By txtPassword =By.id("login-password");
     private static By txtFirstName =By.id("billing:firstname");
     private static By txtLastName =By.id("billing:lastname");
@@ -57,9 +54,6 @@ public class DashboardPage extends LoginPage {
     private static By btnContinueAfterEnteringPayPalDetails =By.id("fullContinue");
     private static By txtValidationForInvalidCreditNumber =By.xpath("//div[@id='addressNormalization']//form[@name='addressNormalizationForm']//h2[@class='gamma ng-binding']");
     private static By btnContinueInPayPal =By.id("guestSubmit");
-    private static By txtRequiredExpire =By.id("qxlwmfw");
-    private static By txtRequiredCvv =By.id("tqlgj");
-    private static By txtRequiredForCreditCardNumber =By.id("wklodsz");
     String value ="value";
 
     public void clickCartIcon() {
@@ -106,11 +100,6 @@ public class DashboardPage extends LoginPage {
         syscoLabUIOgm.sleep(2);
     }
 
-    public void clickAccountButton() {
-        syscoLabUIOgm.click(btnAccount);
-        syscoLabUIOgm.sleep(1);
-    }
-
     public void clickContinue() {
         syscoLabUIOgm.click(btnContinue);
         syscoLabUIOgm.sleep(1);
@@ -145,14 +134,6 @@ public class DashboardPage extends LoginPage {
 
     public boolean isDisplayedPrice() {
      return syscoLabUIOgm.isDisplayed(txtPrice);
-    }
-
-    public String isDisplayedEmptyEmailValidation() {
-        return (syscoLabUIOgm.getText(txtEmptyEmailValidation));
-    }
-
-    public String isDisplayedCheckOut() {
-        return (syscoLabUIOgm.getText(txtCheckOut));
     }
 
     public String isDisplayedLastName() {
@@ -297,27 +278,7 @@ public class DashboardPage extends LoginPage {
 
     public String isDisplayedPayPalAccount() {
         syscoLabUIOgm.sleep(2);
-        syscoLabUIOgm.scrollUp();
-        syscoLabUIOgm.sleep(2);
         return (syscoLabUIOgm.getText(txtPayPal));
-    }
-
-    public String isDisplayedRequiredPopUpForExpire() {
-        syscoLabUIOgm.scrollUp();
-        syscoLabUIOgm.click(txtExpireValue);
-        return (syscoLabUIOgm.getText(txtRequiredExpire));
-    }
-
-    public String isDisplayedRequiredPopUpForCvv() {
-        syscoLabUIOgm.click(txtCVV);
-        return (syscoLabUIOgm.getText(txtRequiredCvv));
-    }
-
-    public String isDisplayedRequiredPopUpForCreditCardNumber() {
-        syscoLabUIOgm.scrollUp();
-        syscoLabUIOgm.click(txtContactNumber);
-        syscoLabUIOgm.click(txtContactNumber);
-        return (syscoLabUIOgm.getText(txtRequiredForCreditCardNumber));
     }
 
     public String isDisplayedValidationForInvalidCreditNumber() {
@@ -348,7 +309,7 @@ public class DashboardPage extends LoginPage {
     public void clickPurchase() {
         syscoLabUIOgm.sleep(1);
         syscoLabUIOgm.click(btnPurchase);
-        syscoLabUIOgm.sleep(3);
+        syscoLabUIOgm.sleep(2);
     }
 
     public void enterCreditCardNumber(String credit_card) {
