@@ -62,13 +62,18 @@ public class DashboardTest extends TestBase {
     public static void testValidationsDisplayWhenClickContinueInProceedToCheckOut() {
         Dashboard.clickProceedToCheckOut();
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(Dashboard.isDisplayedFirstName(),"william","expected name does not displayed");
-        softAssert.assertEquals(Dashboard.isDisplayedLastName(),"jacob","expected name does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedFirstName(), "william", "expected name does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedLastName(), "jacob", "expected name does not displayed");
+    }
+
+    @Test(priority = 5, alwaysRun = true)
+    public static void testValidationsDisplaysWhenClickContinueInCheckout() {
         Dashboard.clearFirstName();
         Dashboard.clearLastNameName();
         Dashboard.clearAddress1();
         Dashboard.clearContactNumberName();
         Dashboard.clickContinue();
+        SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorFirstName(),"This is a required field.","expected value does not displayed");
         softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorLastName(),"This is a required field.","expected value does not displayed");
         softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorAddress(),"This is a required field.","expected value does not displayed");
@@ -76,25 +81,31 @@ public class DashboardTest extends TestBase {
         softAssert.assertAll();
     }
 
-    @Test(priority = 5, alwaysRun = true)
+    @Test(priority = 6, alwaysRun = true)
     public static void testContinueInProceedToCheckOutOfAnItem() {
         Dashboard.enterFirstName();
         Dashboard.enterLastName();
         Dashboard.enterAddress1();
         Dashboard.enterContactNumber();
-        SoftAssert softAssert=new SoftAssert();
-        softAssert.assertEquals(Dashboard.isDisplayedFirstName(),"william","expected name does not displayed");
-        softAssert.assertEquals(Dashboard.isDisplayedLastName(),"jacob","expected name does not displayed");
-        softAssert.assertEquals(Dashboard.isDisplayedAddress(),"Abc","expected name does not displayed");
-        softAssert.assertEquals(Dashboard.isDisplayedContactNumber(),"42342423423","expected name does not displayed");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(Dashboard.isDisplayedFirstName(), "william", "expected name does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedLastName(), "jacob", "expected name does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedAddress(), "Abc", "expected name does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedContactNumber(), "42342423423", "expected name does not displayed");
+        softAssert.assertAll();
+    }
+
+     @Test(priority = 7, alwaysRun = true)
+     public static void testRemovingAndSelectingAPostCode() {
         Dashboard.removePostCode();
         Dashboard.enterPostCode();
         Dashboard.clickContinue();
+        SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(Dashboard.isDisplayedDeliveryOptions(),"DELIVERY OPTIONS","expected name does not displayed");
         softAssert.assertAll();
     }
 
-    @Test(priority = 6, alwaysRun = true)
+    @Test(priority = 8, alwaysRun = true)
     public static void testDeliveryOptions() {
         Dashboard.clickContinueInDeliveryOptions();
         Dashboard.selectPayPalOption();
@@ -105,7 +116,7 @@ public class DashboardTest extends TestBase {
         softAssert.assertAll();
     }
 
-    @Test(priority = 7, alwaysRun = true)
+    @Test(priority = 9, alwaysRun = true)
     public static void testEnteringPayPalDetails() {
         Dashboard.enterCreditCardNumber();
         Dashboard.enterExpirevalue();
