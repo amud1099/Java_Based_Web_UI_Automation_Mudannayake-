@@ -76,7 +76,7 @@ public class DashboardTest extends TestBase {
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorFirstName(),"This is a required field.","expected value does not displayed");
         softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorLastName(),"This is a required field.","expected value does not displayed");
-       // softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorAddress(),"This is a required field.","expected value does not displayed");
+        softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorAddress(),"This is a required field.","expected value does not displayed");
         softAssert.assertEquals(Dashboard.isDisplayedEmptyErrorContactNumber(),"This is a required field.","expected value does not displayed");
         softAssert.assertAll();
     }
