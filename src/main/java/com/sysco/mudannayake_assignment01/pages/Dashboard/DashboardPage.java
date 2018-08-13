@@ -277,7 +277,7 @@ public class DashboardPage extends LoginPage {
     }
 
     public String isDisplayedPayPalAccount() {
-        syscoLabUIOgm.sleep(6);
+        syscoLabUIOgm.sleep(8);
         syscoLabUIOgm.scrollUp();
         syscoLabUIOgm.sleep(2);
         return (syscoLabUIOgm.getText(txtPayPal));
@@ -311,7 +311,7 @@ public class DashboardPage extends LoginPage {
     public void clickPurchase() {
         syscoLabUIOgm.sleep(1);
         syscoLabUIOgm.click(btnPurchase);
-        syscoLabUIOgm.sleep(4);
+        syscoLabUIOgm.sleep(5);
     }
 
     public void enterCreditCardNumber(String credit_card) {
